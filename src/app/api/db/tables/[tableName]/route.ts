@@ -21,9 +21,9 @@ interface ColumnValue {
 
 export async function GET(
   request: Request,
-  context: { params: { tableName: string } }
+  { params }: { params: { tableName: string } }
 ) {
-  const { tableName } = await context.params;
+  const { tableName } = params;
   const sanitizedTableName = sanitizeIdentifier(tableName);
 
   try {
