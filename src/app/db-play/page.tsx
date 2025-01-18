@@ -31,6 +31,7 @@ import {
 import { CreateTableDialog } from "@/components/custom/create-table-dialog";
 import { SchemaDialog } from "@/components/custom/schema-dialog";
 import { ColumnDefinition } from "@/app/types/database";
+import { QueryDashboard } from "@/components/custom/query-dashboard";
 
 interface TableInfo {
   table_name: string;
@@ -367,14 +368,7 @@ export default function DBPlayground() {
                                 size="sm"
                                 variant="outline"
                                 onClick={() => {
-                                  setUpdateData(
-                                    Object.fromEntries(
-                                      Object.entries(row).map(([k, v]) => [
-                                        k,
-                                        String(v ?? ""),
-                                      ])
-                                    )
-                                  );
+                                  setUpdateData({});
                                   setUpdateDialogOpen(true);
                                 }}
                               >
@@ -573,8 +567,13 @@ export default function DBPlayground() {
           <Card>
             <CardHeader>
               <CardTitle>Query Dashboard</CardTitle>
-              <CardDescription>Coming soon...</CardDescription>
+              <CardDescription>
+                Write and execute custom SQL queries
+              </CardDescription>
             </CardHeader>
+            <CardContent>
+              <QueryDashboard />
+            </CardContent>
           </Card>
         </TabsContent>
       </Tabs>

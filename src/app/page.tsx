@@ -10,7 +10,7 @@ export default function Home() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-2">
             <Image
-              src="/database-icon.png"
+              src="/abstract.png"
               alt="DB Play AI Logo"
               width={32}
               height={32}
